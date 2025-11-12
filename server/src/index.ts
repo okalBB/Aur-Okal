@@ -13,4 +13,7 @@ app.post('/submit', (req, res) => {
   res.json({ message: `Server received: ${req.body.input}` })
 })
 
+
+///////// tis is a test for auto git /////
+
 app.listen(3000, () => console.log('Server running on port 3000'))
