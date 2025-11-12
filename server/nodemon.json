@@ -1,0 +1,7 @@
+{
+  "watch": ["src"],
+  "ext": ".ts,.js",
+  "ignore": ["node_modules", "main"],
+  "exec": "npx ts-node --files src/index.ts",
+  "legacyWatch": true
+}

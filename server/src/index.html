@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Send to Express</title>
+</head>
+<body>
+  <h1>Send Input to Server</h1>
+  <input type="text" id="nameInput" placeholder="Enter your name">
+  <button id="sendBtn">Send</button>
+
+  <p id="response"></p>
+
+  <script>
+    const input = document.getElementById("nameInput");
+    const button = document.getElementById("sendBtn");
+    const responseEl = document.getElementById("response");
+
+    button.addEventListener("click", async () => {
+      const name = input.value;
+
+      const res = await fetch("http://localhost:3000/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name })
+      });
+
+      const data = await res.json();
+      responseEl.textContent = data.message;
+    });
+  </script>
+</body>
+</html>
